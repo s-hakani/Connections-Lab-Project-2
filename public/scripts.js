@@ -136,8 +136,10 @@ for (let i = 0; i < navButtons.length; i++) {
 		}
 
         if (pageNumber == 2) {
+			// removing this from the rest of the code that is in the draw loop so that the background doesn't continuously draw over the prayers
 			background("lavender");
 		}
+
 
 		if (pageNumber == 3) {
 			background("white");
