@@ -34,6 +34,14 @@ io.sockets.on('connection', function(socket) {
         //Send a response to just this client
         // socket.emit('msg', data);
     });
+
+    socket.on('position', function(position) {
+        console.log("Received: position x: " + position.x + ' position y: ' + position.y);
+
+        // this is where I got stuck with drawing sockets
+        // how to take the positions and emit them 
+        socket.emit('coordinates', position);
+    })
     
     //Listen for this client to disconnect
     socket.on('disconnect', function() {

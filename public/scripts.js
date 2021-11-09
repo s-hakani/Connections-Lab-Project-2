@@ -50,6 +50,12 @@ sendButton.addEventListener('click', function () {
 	msgInput.value = "";
 });
 
+// **** CHALLENGE / TO DO: SHOW WHEN SOMEONE IS TYPING by using INPUTS instead of
+msgInput.addEventListener('change', () => {
+	socket.emit('typing')
+	console.log("Someone is typing");
+})
+
 
 //Select for all of the buttons
 let navButtons = document.getElementsByClassName('nav-button');
@@ -142,7 +148,7 @@ for (let i = 0; i < navButtons.length; i++) {
 
 
 		if (pageNumber == 3) {
-			background("white");
+			background("lavender");
 		}
 
 		// ADD THIS: with the -1, the default is there is some content there. Needs to be set seperately 

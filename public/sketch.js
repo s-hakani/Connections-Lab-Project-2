@@ -71,7 +71,29 @@ function draw() {
         text(prayerArray[randomPrayer], random(window.innerWidth)-300, random(window.innerHeight));
       timeLastUpdated = Date.now();
       }
-  
-  
-      }
+    }
+  }
+
+  function mouseReleased() {
+    drawFlower(random(50))
+      //Grab mouse position
+    let mousePos = { x: mouseX, y: mouseY };
+    //Send mouse position object to the server
+    socket.emit('position', mousePos);
+    console.log(mousePos);
+   }
+
+   function drawFlower(size) {
+     push();
+      fill("yellow")
+      socket.on('coordinates', function(position) {
+        ellipse(position.x, position.y, 30);
+        translate (position.x,position.y);
+        fill(random(180,260), random(20,60), 100, .5);
+        for (let i = 0; i < 10; i ++) {
+          ellipse(0, 30, 20, size);
+          rotate(PI/5);
+        }
+    })  
+    pop();
   }
