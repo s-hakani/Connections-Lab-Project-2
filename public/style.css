@@ -1,0 +1,205 @@
+html, body {
+  font-size: 24px;
+  font-family: 'Helvetica';
+  margin: 0;
+  padding: 0;
+}
+
+/* what if I want the title to just be on the same background color? or sketch to just be the background */
+/* why is the sketch starting below the top?  */
+
+.heading {
+	color: teal;
+}
+
+#canvas-container {
+  position:absolute;
+  z-index: -10;
+  top: 0;
+  left: 0;
+}
+
+.content {
+	font-family: monospace;
+  }
+
+#explainer {
+	padding-top: 525px;
+	padding-left: 30px;
+	padding-right:30px;
+	margin-bottom: 10px;
+	text-align: center;
+	font-size: medium;
+	font-style: italic;
+}
+
+.site-title {
+  background-color: black;
+  color: teal;
+
+}
+
+
+/* ----- Container-Header Styling ----- */
+h1{
+	text-align: center;
+}
+.container-buttons{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+  	padding: 10px;
+}
+
+.prayer-entry {
+	display: flex;
+	flex-direction: column;
+}
+
+#prayer-text {
+	font-size: larger;
+	display: flex;
+	flex-direction: column;
+	margin-top: 20px;
+}
+
+.nav-button{
+	width: 20%;
+	max-width: 200px;
+	height: 42px;
+	font-size: 0.6em;
+	margin: 0 5%; 
+	color:teal;
+	background-color:white;
+	border-radius: 20px;
+	box-shadow: 5px 5px 3px #888888;
+	border-color: transparent;
+}
+.nav-button:hover{
+	background-color: black;
+	color: white;	
+}
+
+/* ----- Container-Main Styline ----- */
+.container-main{
+	max-width: 1080px;
+	width: 90%;
+	margin: 0 auto; 
+}
+.content{
+	display: none;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	font-size: 0.75em;
+}
+
+.form {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+p{	
+	text-align: center;
+}
+
+
+ol{
+	width: 90%;
+	text-align: left;
+	margin: 0 auto;
+	font-size: 0.8em;
+}
+
+#input-form {
+	display: flex;
+	
+
+}
+
+h2 {
+    text-align: center;
+    font-size: large;
+    font-weight: 900;
+}
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	padding: 20px;
+  }
+
+#content-button-one {
+	display: flex;
+	align-items: center;
+}
+
+#caption {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	margin-top: 0px;
+	padding: 0px;
+}
+
+/* Had to add this in because now the page -1 never loads in the loop.  */
+#content-button-one {
+	font-size: large;
+	display: none
+	  
+}
+
+.form-container {
+	display: flex;
+	flex-direction: column;
+
+}
+
+#prayer-button {
+	width: 50%;
+    margin: 10px;
+	align-self: center;
+}
+
+
+/* Chatbox */
+.chat-header{
+    margin-top: 10px;
+    font-size: 24px;
+    text-align: center;
+}
+.chat-box{
+    border: 2px solid black;
+    height: 300px;
+    padding-left: 5px;
+    overflow: auto;
+}
+
+.sub-container {
+    display: flex;
+    width: 50%;
+    max-width: 1200px;
+}
+.chat-input{
+    flex-direction: row;
+    align-items: left;
+}
+.chat-feed{
+    flex-direction: column;  
+    align-items: left;
+}
+input{
+    display: inline;
+    padding: 5px;
+    margin: 10px 10px 0 0;
+    height: 20px;
+}
+.chat-input-name {
+    width: 20%;
+}
+.chat-input-msg{
+    width: 65%;
+}

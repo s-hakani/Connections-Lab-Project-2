@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="p5.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8">
+  <title>Connections Lab Project #2</title>
+
+</head>
+
+<body>
+  <div id="canvas-container"></div>
+  <section class="container-header">
+    <h1 class="heading" id="title">~ take one, give one ~</h1>
+    <div class="container-buttons">
+      <button class="nav-button" id="button-one">ABOUT THE PROJECT</button>
+      <button class="nav-button" id="button-two">SUBMIT YOUR PRAYER</button>
+      <button class="nav-button" id="button-three">PRAYER GALLERY</button>
+      <button class="nav-button" id="button-four">COMMUNICATION CONTAINER</button>
+    </div>
+    <p id="explainer"> The prayers that are auto-populated come from a specific container created right now: 10 people from Sarah's family together under one roof, mapping to the 10 dots above, saying goodbye to her grandmother who is moving back to India. While the project intent is to be a prayer container for queer people of faith, the current container of the multigenerational home in flux serves as a blueprint for what it looks like to house disparate but connected prayers. </p>
+  </section>
+
+  <section class="container-main">
+    <div class="content" id="content-button-one">
+      
+      <p class="intro-text">Welcome! We are glad to have you here. This is a container of the wishes, dreams, goals, and desires of queer people of faith around the world. Our goal is that this space provides you community, comfort, and peace knowing that someone is wishing you well and thinking of your prayer.</p>
+
+      <p class="intro-text">We hope that you share a prayer and receive one, and make sure to check out the prayer gallery to see our full archive.</p>
+
+        <div id = "photo-format">
+          <img class = "center" id = "hands" src="media/Shirin Neshat Hands.jpeg"
+           width = 500px/>
+          <p id = "caption">Work by Shirin Neshat</p>
+
+        </div>
+    </div>
+
+    <div class="content" id="content-button-two">
+      <h2> Use the process below to submit your prayer request for others to receive, hold, and comfort you in. </h2>
+      <ol>
+        <li>Breathe & reflect. What inside of you is requiring care or attention? What brought you here? </li>
+        <br>
+        <li>Share out your prayer request in the chat box below and let it flow into the ether. It will also be
+          available on our prayer gallery for future visitors!</li>
+        <br>
+
+        <section class="form-container">
+          <h2 class="form-subheading">Enter your prayer request here:</h2>
+
+          <div class = "prayer-entry">
+            <input id="prayer-input"></input>
+            <button id="prayer-button">SUBMIT YOUR PRAYER</button>
+          </div>
+          <br>
+          <br>
+
+      </section>
+
+        <li>Remember, when you give one, you get one. This work is communal. Take in the prayer request that is shared
+          with you in return when you submit, and carve out a minute or more to reflect on it and share your prayer with the requester.</li>
+          <br>
+          <h2 class = "project-heading">The prayer you get in exchange is: <span id="prayer-text"></span></h2>
+          
+          <div class="prayer-info">
+              <h3 class = "prayer-text" id="p-text"></h3>
+              <p class="prayer-loc" id ="p-loc"></p>
+          </div>
+
+      </ol>
+      
+    </div>
+
+    <div class="content" id="content-button-three">
+      <h2>Welcome to our Prayer Gallery!</h2>
+      <p>Here, you can see the archive of all of the prayers submitted from around the world. Feel free to scroll through and share your good wishes to those who are asking.</p>
+    </div>
+
+
+    <div class="content" id="content-button-four">
+      <p>Use the chat below to connect with other queer people of faith around the world anonymously! Remember, this space is moderated 24/7 and our community guidelines are upheld. Those who violate those agreements are banned from the space.</p>
+
+      <div class="sub-container chat-feed">
+        <div class="chat-header">Communication Container</div>
+        <div class="chat-box" id="chat-box-msgs"></div>
+      </div>
+
+      <!-- Enter chat messages here -->
+      <div class="sub-container chat-input">
+        <input type="text" class="chat-input-name" id="name-input" placeholder="Psuedoname or Name"/>
+        <input type="text" class="chat-input-msg" id="msg-input" placeholder="Reflection"/>
+        <button id="send-button">Send</button>
+      </div>
+    </div>
+
+
+
+  </section>
+
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+  <script src="scripts.js"></script>
+  <script src="sketch.js"></script>
+
+</body>
+
+</html>
