@@ -4,7 +4,7 @@
 
 // this is from me testing out why the backgrounds are keeping their history and drawing on top of each other! still haven't figured this out... 
 
-let origC1, origC2, origN, origNewC, c1, c2, n, newc, myCanvas;
+let origC1, origC2, origN, origNewC, c1, c2, n, newc, myCanvas, path;
 
 // This may go away when I use NeDB 
 let prayerArray = [
@@ -59,10 +59,12 @@ function draw() {
       }
   
     if (pageNumber == 2) {
-
+      colorMode(HSB, 360, 100, 100)
       //This is the flower drawing
       push();
         //colorMode(HSB, 360, 100, 100); 
+        //Testing to see if path is being set 
+        // console.log("path", path);
         path.display();
       pop();
 
@@ -86,20 +88,22 @@ function draw() {
 //Helper functions to draw flowers 
 
 function mousePressed() {
-  if (pageNumber == 2) {
+  //if (pageNumber == 2) {
+    console.log("Mouse is pressed");
     path = new Path();
-  }
+  //}
 }
 
 function mouseDragged() {
   if (pageNumber == 2) {
+    console.log("Mouse is dragged");
     path.addPoint(mouseX, mouseY);
   }
 }
 
-
 function mouseReleased() {
   if (pageNumber == 2) {
+    console.log("Mouse is released");
     drawFlower(random(50));
   }
 }
@@ -109,10 +113,12 @@ function mouseReleased() {
 function drawFlower(size) {
   if (pageNumber == 2) {
     push(); 
+      console.log("Filling the flower center");
       fill("yellow")
       ellipse(mouseX, mouseY, 30);
       translate (mouseX,mouseY)
-      fill(random(180,260), random(20,60), 100, 0.5);
+      console.log("Filling the flower petals");
+      fill(random(180,260), random(20,60), 100, 100);
       for (let i = 0; i < 10; i ++) {
         ellipse(0, 30, 20, size);
         rotate(PI/5);
@@ -156,7 +162,6 @@ class Path {
       this.hues.push(this.hue)
     }
   }
-  
   
   display() {
     //path = new Path(); 
