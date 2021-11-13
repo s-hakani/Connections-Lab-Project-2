@@ -1,6 +1,8 @@
 //adapted from Allison Parish's walk through here 
 // https://creative-coding.decontextualize.com/changes-over-time/
 
+// const { Socket } = require("socket.io");
+
 
 // this is from me testing out why the backgrounds are keeping their history and drawing on top of each other! still haven't figured this out... 
 
@@ -88,6 +90,7 @@ function draw() {
 //Helper functions to draw flowers 
 
 function mousePressed() {
+  socket.emit('pressed');
   //if (pageNumber == 2) {
     console.log("Mouse is pressed");
     path = new Path();
@@ -96,6 +99,7 @@ function mousePressed() {
 
 function mouseDragged() {
   if (pageNumber == 2) {
+    socket.emit('dragged', {xPos: mouseX, yPos: mouseY})
     console.log("Mouse is dragged");
     path.addPoint(mouseX, mouseY);
   }
@@ -103,6 +107,7 @@ function mouseDragged() {
 
 function mouseReleased() {
   if (pageNumber == 2) {
+    socket.emit('draw');
     console.log("Mouse is released");
     drawFlower(random(50));
   }

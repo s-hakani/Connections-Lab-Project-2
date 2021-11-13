@@ -1,5 +1,6 @@
 let pageNumber = -1;
 let prayersArray;
+let isTyping = false;
 
 //window.addEventListener('load', function() {
 	//Open and connect socket
@@ -51,10 +52,22 @@ sendButton.addEventListener('click', function () {
 });
 
 // **** CHALLENGE / TO DO: SHOW WHEN SOMEONE IS TYPING by using INPUTS instead of
-msgInput.addEventListener('change', () => {
+msgInput.addEventListener('input', () => {
 	socket.emit('typing')
-	console.log("Someone is typing");
+	//console.log("Someone is typing");
 })
+
+socket.on('typeMsg', function() {
+	console.log("Back and forth connection");
+	isTyping = true;
+})
+
+typingElement = document.getElementById("typing-message");
+
+if (isTyping) {
+	// add code here
+	typingElement.innerHTML("Someone is typing...");
+}
 
 
 //Select for all of the buttons

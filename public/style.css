@@ -181,6 +181,11 @@ h2 {
     overflow: auto;
 }
 
+#typing-message {
+	text-align: center;
+	display: block;
+}
+
 .sub-container {
     display: flex;
 	background-color: whitesmoke;

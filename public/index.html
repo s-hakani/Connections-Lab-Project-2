@@ -74,7 +74,8 @@
 
     <div class="content" id="content-button-three">
       <h2>Welcome to our Prayer Gallery!</h2>
-      <p>Here, you can see the archive of all of the prayers submitted from around the world. Feel free to scroll through and share your good wishes to those who are asking.</p>
+      <p>Here, you can see the archive of all of the prayers submitted from around the world.</p>
+      <p>While you're here, use your mouse to draw some flowers for others who are also in the gallery. Remember, you can also save your drawing by clicking the download button (WIP).</p>
     </div>
 
 
@@ -84,7 +85,9 @@
       <div class="full-chat-area" id="full-chat-area">
         <div class="sub-container chat-feed">
           <div class="chat-header">Communication Container</div>
-          <div class="chat-box" id="chat-box-msgs"></div>
+          <div class="chat-box" id="chat-box-msgs">
+            <p id="typing-message"></p>
+          </div>>
         </div>
   
         <!-- Enter chat messages here -->
@@ -105,6 +108,7 @@
   </section>
 
   <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+  <!-- Whatever variables are defined in the first are also in the second  -->
   <script src="scripts.js"></script>
   <script src="sketch.js"></script>
 

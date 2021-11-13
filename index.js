@@ -35,13 +35,27 @@ io.sockets.on('connection', function(socket) {
         // socket.emit('msg', data);
     });
 
-    socket.on('position', function(position) {
-        console.log("Received: position x: " + position.x + ' position y: ' + position.y);
 
-        // this is where I got stuck with drawing sockets
-        // how to take the positions and emit them 
-        socket.emit('coordinates', position);
+    socket.on('typing', function() {
+        console.log("Got the typing message");
+        socket.broadcast.emit("typeMsg");
     })
+
+    // This part needs some work: Add the socket emit here and on in sketch.js
+
+    socket.on('pressed', () => {
+        console.log("Mouse is pressed");
+    })
+
+    socket.on('dragged', () => {
+        console.log("Mouse is dragged");
+    })
+
+    socket.on('draw', () => {
+        console.log("Mouse is released");
+    })
+
+
     
     //Listen for this client to disconnect
     socket.on('disconnect', function() {
